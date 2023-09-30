@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="PetOne:Web">
+    <output-path>$PROJECT_DIR$/out/artifacts/PetOne_Web</output-path>
+    <root id="archive" name="PetOne_Web.war">
+      <element id="artifact" artifact-name="PetOne:Web exploded" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="jakarta.servlet.jsp.jstl-3.0.1" />
+          <element id="library" level="project" name="jakarta.servlet.jsp.jstl-api-3.0.0" />
+          <element id="library" level="project" name="lombok" />
+          <element id="library" level="project" name="postgresql-42.6.0" />
+          <element id="library" level="project" name="servlet-api" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
