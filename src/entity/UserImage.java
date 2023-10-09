@@ -5,15 +5,11 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.math.BigInteger;
-
+import java.net.URI;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class User {
-    BigInteger id;
-    String name;
-    String email;
-    String password;
+public class UserImage {
+    URI imagePath;
 }

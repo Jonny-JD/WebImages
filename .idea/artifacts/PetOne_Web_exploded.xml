@@ -15,6 +15,7 @@
           <element id="library" level="project" name="servlet-api" />
           <element id="library" level="project" name="commons-codec-1.16.0" />
           <element id="library" level="project" name="commons-lang3-3.13.0" />
+          <element id="library" level="project" name="commons-io-2.14.0" />
         </element>
       </element>
     </root>

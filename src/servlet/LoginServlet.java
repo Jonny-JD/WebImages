@@ -7,13 +7,15 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.SneakyThrows;
+import mapper.UserLoginDTOMapper;
 import service.UserService;
 import util.JspHelper;
-import mapper.UserLoginDTOMapper;
 
 import java.io.IOException;
 
-@WebServlet("/login")
+import static util.UrlPath.LOGIN;
+
+@WebServlet(LOGIN)
 public class LoginServlet extends HttpServlet {
 
     private final UserLoginDTOMapper userLoginDTOMapper = UserLoginDTOMapper.getInstance();
@@ -35,13 +37,14 @@ public class LoginServlet extends HttpServlet {
 
     @SneakyThrows
     private void onLoginFail(HttpServletRequest req, HttpServletResponse resp) {
-        resp.sendRedirect("/login?error&email=" + req.getParameter("email"));
+        resp.sendRedirect(LOGIN + "?error&email=" + req.getParameter("email"));
     }
 
     @SneakyThrows
     private void onLoginSuccess(UserDTO userDTO, HttpServletRequest req, HttpServletResponse resp) {
+        req.getSession().removeAttribute("user");
         req.getSession().setAttribute("user", userDTO);
-        resp.sendRedirect("/home");
+        resp.sendRedirect("/personal");
     }
 
 }

@@ -2,16 +2,15 @@ package mapper;
 
 import dto.UserDTO;
 import entity.User;
-import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
 import static lombok.AccessLevel.PRIVATE;
 
 @NoArgsConstructor(access = PRIVATE)
-public class UserDAOMapper implements Mapper <User, UserDTO> {
-    private static final UserDAOMapper INSTANCE = new UserDAOMapper();
+public class UserFromDAOMapper implements Mapper <User, UserDTO> {
+    private static final UserFromDAOMapper INSTANCE = new UserFromDAOMapper();
 
-    public static UserDAOMapper getInstance() {
+    public static UserFromDAOMapper getInstance() {
         return INSTANCE;
     }
     @Override

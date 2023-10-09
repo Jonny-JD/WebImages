@@ -9,55 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ae3dd9bb-5cd4-4546-8a42-932f9672a820" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/PetOne_Web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/PetOne_Web_exploded.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jakarta_servlet_jsp_jstl_3_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jakarta_servlet_jsp_jstl_api_3_0_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/lombok.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/postgresql_42_6_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/servlet_api.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/resourceBundles.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PetOne.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/commons-codec-1.16.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/commons-lang3-3.13.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/jakarta.servlet.jsp.jstl-3.0.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/jakarta.servlet.jsp.jstl-api-3.0.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/lombok.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/postgresql-42.6.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/servlet-api.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/translations.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/translations_ru_RU.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dao/UserDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dto/UserDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/entity/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mapper/Mapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mapper/UserDAOMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mapper/UserLoginDTOMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/servlet/LocaleServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/servlet/LoginServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/servlet/RegistrationServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/util/ConnectionManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/util/JspHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/util/PasswordEncoder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/util/PropertiesUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/language-header.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/login.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/registration.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/a-mountain-with-a-blue-sky-and-a-man-standing-on-the-edge-of-it.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/img/high-angle-shot-of-a-colorful-autumn-forest-under-the-gloomy-sky.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/style/style.css" afterDir="false" />
+    <list default="true" id="ae3dd9bb-5cd4-4546-8a42-932f9672a820" name="Changes" comment="Last commit without image validation">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,14 +20,18 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="Interface" />
+        <option value="Jsp File" />
+        <option value="CSS File" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -101,15 +58,17 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/SpringProjects/SpringInAction/PetOne",
+    "last_opened_file_path": "D:/SpringProjects/SpringInAction/PetOne/lib",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Artifacts",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   },
@@ -121,6 +80,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="validator" />
       <recent name="entity." />
       <recent name="dao." />
     </key>
@@ -132,6 +92,8 @@
       <recent name="D:\SpringProjects\SpringInAction\PetOne\web\WEB-INF\style" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\SpringProjects\SpringInAction\PetOne\web\resources\style\header" />
+      <recent name="D:\SpringProjects\SpringInAction\PetOne\web\resources" />
       <recent name="D:\SpringProjects\SpringInAction\PetOne\web" />
       <recent name="D:\SpringProjects\SpringInAction\PetOne\web\WEB-INF" />
       <recent name="D:\SpringProjects\SpringInAction\PetOne\web\WEB-INF\jsp" />
@@ -145,6 +107,7 @@
   </component>
   <component name="RunManager">
     <configuration name="Tomcat 10.1.13" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.13" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/login" />
       <option name="UPDATING_POLICY" value="redeploy-artifacts" />
       <deployment>
         <artifact name="PetOne:Web exploded">
@@ -244,7 +207,119 @@
       <workItem from="1695834198883" duration="20539000" />
       <workItem from="1695931919934" duration="24155000" />
       <workItem from="1696018041103" duration="1775000" />
+      <workItem from="1696082253920" duration="2681000" />
+      <workItem from="1696184844828" duration="8542000" />
+      <workItem from="1696242326841" duration="2855000" />
+      <workItem from="1696263220774" duration="5616000" />
+      <workItem from="1696405615845" duration="7007000" />
+      <workItem from="1696526320291" duration="9905000" />
+      <workItem from="1696577476188" duration="81247000" />
     </task>
+    <task id="LOCAL-00001" summary="First commit">
+      <option name="closed" value="true" />
+      <created>1696082320361</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1696082320361</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Locale">
+      <option name="closed" value="true" />
+      <created>1696244014537</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1696244014537</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Authorization without password double check">
+      <option name="closed" value="true" />
+      <created>1696411648939</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1696411648939</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Authorization without password double check 1.01">
+      <option name="closed" value="true" />
+      <created>1696427599434</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1696427599434</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Delete user without UI">
+      <option name="closed" value="true" />
+      <created>1696534072002</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1696534072002</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Logout works">
+      <option name="closed" value="true" />
+      <created>1696537244746</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1696537244746</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Personal front">
+      <option name="closed" value="true" />
+      <created>1696602150719</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1696602150719</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Add upload image servlet">
+      <option name="closed" value="true" />
+      <created>1696785523277</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1696785523277</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Without images servlet (not complete)">
+      <option name="closed" value="true" />
+      <created>1696796442109</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1696796442109</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Without images servlet (not complete) amended">
+      <option name="closed" value="true" />
+      <created>1696796508114</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1696796508114</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Without images servlet (not complete) amended">
+      <option name="closed" value="true" />
+      <created>1696796523395</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1696796523395</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Images works">
+      <option name="closed" value="true" />
+      <created>1696863053697</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1696863053697</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Last commit without image validation">
+      <option name="closed" value="true" />
+      <created>1696868973140</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1696868973140</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,13 +336,96 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="First commit" />
+    <MESSAGE value="Locale" />
+    <MESSAGE value="Authorization without password double check" />
+    <MESSAGE value="Authorization without password double check 1.01" />
+    <MESSAGE value="Delete user without UI" />
+    <MESSAGE value="Logout works" />
+    <MESSAGE value="Personal front" />
+    <MESSAGE value="Add upload image servlet" />
+    <MESSAGE value="Without images servlet (not complete)" />
+    <MESSAGE value="Without images servlet (not complete) amended" />
+    <MESSAGE value="Images works" />
+    <MESSAGE value="Last commit without image validation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Last commit without image validation" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/dao/UserDAO.java</url>
-          <line>90</line>
+          <url>file://$PROJECT_DIR$/src/service/UserService.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/servlet/PersonalServlet.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/servlet/LoginServlet.java</url>
+          <line>45</line>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/dao/UserDAO.java</url>
+          <line>148</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/servlet/GetImageServlet.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/servlet/GetImageServlet.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/servlet/PersonalServlet.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/servlet/PersonalServlet.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/servlet/GetImageServlet.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/servlet/GetImageServlet.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/servlet/GetImageServlet.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/dao/UserDAO.java</url>
+          <line>147</line>
+          <properties class="dao.UserDAO" method="getUserImages">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/servlet/GetImageServlet.java</url>
+          <line>31</line>
+          <properties class="servlet.GetImageServlet" method="writeImage">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -1,6 +1,5 @@
 package util;
 
-import lombok.SneakyThrows;
 import lombok.experimental.UtilityClass;
 
 import java.sql.Connection;

@@ -8,16 +8,14 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-import static util.UrlPath.LOCALE;
+import static util.UrlPath.LOGIN;
+import static util.UrlPath.LOGOUT;
 
-@WebServlet(LOCALE)
-public class LocaleServlet extends HttpServlet {
+@WebServlet(LOGOUT)
+public class LogoutServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        var lang = req.getParameter("lang");
-        req.getSession().setAttribute("lang", lang);
-
-        var prevPage = req.getHeader("referer").replaceAll("\\?lang=.{5}", "");
-        resp.sendRedirect(prevPage + "?lang=" + lang);
+        req.getSession().invalidate();
+        resp.sendRedirect(LOGIN);
     }
 }

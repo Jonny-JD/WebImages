@@ -1,6 +1,7 @@
 package servlet;
 
 import dto.UserDTO;
+import exception.ValidationException;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -11,7 +12,10 @@ import util.JspHelper;
 
 import java.io.IOException;
 
-@WebServlet("/registration")
+import static util.UrlPath.LOGIN;
+import static util.UrlPath.REGISTRATION;
+
+@WebServlet(REGISTRATION)
 public class RegistrationServlet extends HttpServlet {
     private static final UserService userService = UserService.getInstance();
 
@@ -30,9 +34,11 @@ public class RegistrationServlet extends HttpServlet {
 
         try {
             userService.addNewUser(userDTO);
-            resp.sendRedirect("/login");
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+            req.getSession().removeAttribute("user");
+            resp.sendRedirect(LOGIN);
+        } catch (ValidationException e) {
+            req.setAttribute("errors", e.getErrors());
+            doGet(req, resp);
         }
     }
 }

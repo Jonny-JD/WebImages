@@ -1,16 +1,17 @@
 package dao;
 
-import dto.UserDTO;
 import entity.User;
+import entity.UserImage;
 import lombok.NoArgsConstructor;
 import lombok.SneakyThrows;
 import util.ConnectionManager;
 import util.PasswordEncoder;
 
-import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.nio.file.Paths;
 import java.sql.ResultSet;
-import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import static java.sql.Statement.RETURN_GENERATED_KEYS;
@@ -19,14 +20,17 @@ import static lombok.AccessLevel.PRIVATE;
 @NoArgsConstructor(access = PRIVATE)
 public class UserDAO {
 
-    private static final String FIND_BY_EMAIL_AND_PASSWORD = """
+    private static final String FIND_BY_EMAIL = """
             SELECT id, name, email FROM users
-            WHERE email = ?
-            AND password = ?
+            WHERE email =?
             """;
+    private static final String FIND_BY_EMAIL_AND_PASSWORD = FIND_BY_EMAIL + " " + "AND password = ?";
     private static final String ADD_NEW_USER = """
             INSERT INTO users (name, email, password)
             VALUES (?, ?, ?)
+            """;
+    private static final String DELETE_USER_BY_ID = """
+            DELETE FROM users WHERE id = ?
             """;
 
     private static final String ADD_SALT = """
@@ -38,10 +42,34 @@ public class UserDAO {
             JOIN users u ON u.email = ?
                 JOIN salt s ON u.id = s.id
             """;
+    private static final String ADD_NEW_IMAGE = """
+            INSERT INTO user_images (id, uri)
+            VALUES (?, ?)
+            """;
+    private static final String GET_USER_IMAGES = """
+            SELECT uri FROM user_images
+            WHERE id = ?
+            """;
     private static final UserDAO INSTANCE = new UserDAO();
 
     public static UserDAO getInstance() {
         return INSTANCE;
+    }
+
+    @SneakyThrows
+    public Optional<User> findByEmail(String email) {
+        User user = null;
+        try (var connection = ConnectionManager.get();
+             var preparedStatement = connection.prepareStatement(FIND_BY_EMAIL)) {
+            preparedStatement.setString(1, email);
+
+            var resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+                user = buildUserEntity(resultSet);
+            }
+        }
+        return Optional.ofNullable(user);
     }
 
     @SneakyThrows
@@ -59,9 +87,10 @@ public class UserDAO {
                 preparedStatement.setString(2, PasswordEncoder.generatePassword(password, resultSetSalt.getString("salt")));
 
                 var resultSet = preparedStatement.executeQuery();
-                resultSet.next();
 
-                user = buildUserEntity(resultSet);
+                if (resultSet.next()) {
+                    user = buildUserEntity(resultSet);
+                }
             }
 
             return Optional.ofNullable(user);
@@ -70,15 +99,15 @@ public class UserDAO {
     }
 
     @SneakyThrows
-    public User addNewUser(UserDTO userDTO) {
+    public User addNewUser(User entity) {
         var salt = PasswordEncoder.generateSalt();
 
         try (var connection = ConnectionManager.get();
              var preparedStatement = connection.prepareStatement(ADD_NEW_USER, RETURN_GENERATED_KEYS);
              var preparedStatementSalt = connection.prepareStatement(ADD_SALT)) {
-            preparedStatement.setString(1, userDTO.getName());
-            preparedStatement.setString(2, userDTO.getEmail());
-            preparedStatement.setString(3, PasswordEncoder.generatePassword(userDTO.getPassword(), salt));
+            preparedStatement.setString(1, entity.getName());
+            preparedStatement.setString(2, entity.getEmail());
+            preparedStatement.setString(3, PasswordEncoder.generatePassword(entity.getPassword(), salt));
 
             preparedStatement.executeUpdate();
 
@@ -90,15 +119,48 @@ public class UserDAO {
 
             preparedStatementSalt.executeUpdate();
 
-            return User.builder()
-                    .id(generatedKeys.getObject("id", BigInteger.class))
-                    .email(userDTO.getEmail())
-                    .name(userDTO.getName())
-                    .build();
+            entity.setId(generatedKeys.getObject("id", BigInteger.class));
 
+            return entity;
         }
     }
 
+    @SneakyThrows
+    public boolean deleteUserById(BigInteger id) {
+        try (var connection = ConnectionManager.get();
+             var preparedStatement = connection.prepareStatement(DELETE_USER_BY_ID)) {
+            preparedStatement.setInt(1, id.intValue());
+            return preparedStatement.executeUpdate() > 0;
+        }
+    }
+
+    @SneakyThrows
+    public void addNewImage(String path, BigInteger id) {
+        try (var connection = ConnectionManager.get();
+             var preparedStatement = connection.prepareStatement(ADD_NEW_IMAGE)) {
+            preparedStatement.setInt(1, id.intValue());
+            preparedStatement.setString(2, path);
+            preparedStatement.executeUpdate();
+        }
+    }
+
+    @SneakyThrows
+    public List<UserImage> getUserImages(BigInteger id) {
+        List<UserImage> userImages = new ArrayList<>();
+        try (var connection = ConnectionManager.get();
+             var preparedStatement = connection.prepareStatement(GET_USER_IMAGES)) {
+            preparedStatement.setInt(1, id.intValue());
+            var resultSet = preparedStatement.executeQuery();
+            UserImage userImage;
+            while (resultSet.next()) {
+                userImage = UserImage.builder()
+                        .imagePath(Paths.get((resultSet.getString("uri"))).normalize().toUri())
+                        .build();
+                userImages.add(userImage);
+            }
+        }
+        return userImages;
+    }
 
     @SneakyThrows
     private static User buildUserEntity(ResultSet resultSet) {
